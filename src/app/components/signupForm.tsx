@@ -2,55 +2,65 @@
 
 import { BaseButton } from "./button";
 import Link from "next/link";
-import FormInput from "./formInput";
-import { FormEvent } from "react";
-import axios from "axios";
-import { useRouter } from "next/navigation";
-import { FormProvider, useForm } from "react-hook-form";
+import { FormField } from "./formField";
 
-type IFormInput = {
+import { useForm, FormProvider } from "react-hook-form";
+
+export type IFormInput = {
   name: string;
   email: string;
   password: string;
 };
 
 export default function SignupForm() {
-  const router = useRouter();
-  const methods = useForm<IFormInput>();
+  // const router = useRouter();
+
+  const methods = useForm<IFormInput>({
+    criteriaMode: "all",
+  });
 
   const onSubmit = async (data: IFormInput) => {
     console.log("SUCCESS", data);
   };
-  // async function handleSubmitForm(e: FormEvent) {
-  //   try {
-  //     const res = await axios.post("/api/auth/signup", user);
-  //     router.push("http://localhost:3000");
-  //     console.log(res);
-  //   } catch (error) {
-  //     console.log(`Signup failed. ${error}`);
-  //   }
-  // }
 
   return (
-    <FormProvider {...methods}>
-      <div className="h-auto w-80 gap-8 flex flex-col items-center justify-between p-8 rounded-xl shadow-2xl ">
-        <div>
+    <div className="h-auto w-[400px] flex flex-col items-center justify-between pl-16 pr-16 pt-8 pb-8 rounded-xl shadow-2xl gap-8">
+      <div className="w-full">
+        <FormProvider {...methods}>
           <form
             noValidate
             onSubmit={methods.handleSubmit(onSubmit)}
-            className="flex flex-col items-center gap-8">
-            <FormInput
+            className="flex flex-col items-center w-full gap-8">
+            <FormField
               type="text"
               name="name"
-              placeholder="Name"></FormInput>
-            <FormInput
+              placeholder="Name"
+              options={{
+                required: {
+                  value: true,
+                  message: "Name is required",
+                },
+              }}></FormField>
+            <FormField
               type="email"
               name="email"
-              placeholder="Email"></FormInput>
-            <FormInput
+              placeholder="Email"
+              options={{
+                required: {
+                  value: true,
+                  message: "Email is required",
+                },
+              }}></FormField>
+            <FormField
               type="password"
               name="password"
-              placeholder="Password"></FormInput>
+              placeholder="Password"
+              options={{
+                required: {
+                  value: true,
+                  message: "Password is required",
+                },
+              }}></FormField>
             <BaseButton
               buttonType="submit"
               buttonSize="large"
@@ -59,15 +69,15 @@ export default function SignupForm() {
               Sign up
             </BaseButton>
           </form>
-        </div>
-        <div>
-          <Link
-            className="hover:underline"
-            href={"/"}>
-            Login
-          </Link>
-        </div>
+        </FormProvider>
       </div>
-    </FormProvider>
+      <div>
+        <Link
+          className="hover:underline"
+          href={"/"}>
+          Login
+        </Link>
+      </div>
+    </div>
   );
 }
