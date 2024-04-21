@@ -7,6 +7,7 @@ import { IFormInput } from "./signupForm";
 import { useForm, FormProvider } from "react-hook-form";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 
 export default function LogInForm() {
   const router = useRouter();
@@ -67,11 +68,10 @@ export default function LogInForm() {
             }}
             icon={<Lock />}></FormField>
           <BaseButton
-            buttonType="submit"
+            type="submit"
             buttonSize="large"
-            buttonStyle="primary">
-            Log In
-          </BaseButton>
+            buttonStyle="primary"
+            text="Log In"></BaseButton>
         </form>
       </FormProvider>
       <Link

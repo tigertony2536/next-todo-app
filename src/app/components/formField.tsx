@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactNode } from "react";
 import { InputHTMLAttributes } from "react";
 import { cn } from "../libs/cn";
@@ -49,7 +51,7 @@ export const FormField: React.FC<InputProps> = ({
           )
         }
       />
-      <DevTool control={control}></DevTool>
+      {/* <DevTool control={control}></DevTool> */}
     </div>
   );
 };

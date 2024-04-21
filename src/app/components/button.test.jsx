@@ -5,7 +5,7 @@ import { BaseButton } from "./button";
 
 describe("test Button component", () => {
   beforeEach(() => {
-    render(<BaseButton>Test</BaseButton>);
+    render(<BaseButton text="Test"></BaseButton>);
   });
 
   it("Canrender renders the button", () => {

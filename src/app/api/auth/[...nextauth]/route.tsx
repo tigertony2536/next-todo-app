@@ -49,13 +49,6 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-  pages: {
-    signIn: "/",
-    signOut: "/home",
-    error: "/auth/error", // Error code passed in query string as ?error=
-    // verifyRequest: '/auth/verify-request', // (used for check email message)
-    newUser: "/auth/signup", // New users will be directed here on first sign in (leave the property out if not of interest)
-  },
   adapter: PrismaAdapter(prisma) as Adapter,
   session: {
     strategy: "jwt",

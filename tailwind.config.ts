@@ -12,6 +12,9 @@ const config: Config = {
         primary: "#845EC2",
         secondary: "#FF8066",
       },
+      screen: {
+        sm: "600px",
+      },
       fontSize: {
         h1: "90px",
         h2: "67px",

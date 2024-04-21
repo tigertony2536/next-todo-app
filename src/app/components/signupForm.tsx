@@ -116,12 +116,11 @@ export default function SignupForm() {
                 },
               }}></FormField>
             <BaseButton
-              buttonType="submit"
+              type="submit"
               buttonSize="large"
               buttonStyle="primary"
-              isDisabled={false}>
-              Sign up
-            </BaseButton>
+              disabled={false}
+              text="Sign up"></BaseButton>
           </form>
         </FormProvider>
       </div>
