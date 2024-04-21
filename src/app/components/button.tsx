@@ -5,7 +5,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   buttonType: "submit" | "button";
   buttonStyle: "primary" | "secondary";
   buttonSize: "small" | "large";
-  isDisabled: boolean;
+  isDisabled?: boolean;
   children: ReactNode;
 }
 

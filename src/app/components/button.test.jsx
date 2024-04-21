@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import { BaseButton } from "./button";
 
@@ -8,7 +8,7 @@ describe("test Button component", () => {
     render(<BaseButton>Test</BaseButton>);
   });
 
-  it("renders the button", () => {
+  it("Canrender renders the button", () => {
     expect(screen.getByRole("button")).toBeInTheDocument();
   });
 
