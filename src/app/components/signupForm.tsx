@@ -1,6 +1,6 @@
 "use client";
 
-import { BaseButton } from "./button";
+import { Button } from "./button/button";
 import Link from "next/link";
 import { FormField } from "./formField";
 import axios from "axios";
@@ -115,12 +115,12 @@ export default function SignupForm() {
                   },
                 },
               }}></FormField>
-            <BaseButton
+            <Button
               type="submit"
               buttonSize="large"
               buttonStyle="primary"
               disabled={false}
-              text="Sign up"></BaseButton>
+              text="Sign up"></Button>
           </form>
         </FormProvider>
       </div>

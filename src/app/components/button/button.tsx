@@ -8,15 +8,17 @@ interface buttonStyle extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
 }
 
-export function BaseButton({
+export function Button({
   type = "submit",
   buttonStyle,
   buttonSize,
   text,
   disabled = false,
   className,
+  onClick,
 }: buttonStyle) {
-  const baseClass = "text-white bg-primary hover:underline text-base h-10";
+  const baseClass =
+    "text-white bg-primary hover:underline text-base h-8 rounded-full";
   const sizeClass = buttonSize === "small" ? "w-40" : "w-full";
   const typeClass =
     buttonStyle === "secondary"
@@ -33,7 +35,8 @@ export function BaseButton({
     <button
       type={type}
       className={cn(baseClass, sizeClass, typeClass, disableClass, className)}
-      disabled={disabled}>
+      disabled={disabled}
+      onClick={onClick}>
       {text}
     </button>
   );

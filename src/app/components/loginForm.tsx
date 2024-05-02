@@ -1,5 +1,5 @@
 "use client";
-import { BaseButton } from "./button";
+import { Button } from "./button/button";
 import Link from "next/link";
 import { Person, Lock } from "react-bootstrap-icons";
 import { FormField } from "./formField";
@@ -7,7 +7,6 @@ import { IFormInput } from "./signupForm";
 import { useForm, FormProvider } from "react-hook-form";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import dynamic from "next/dynamic";
 
 export default function LogInForm() {
   const router = useRouter();
@@ -32,7 +31,7 @@ export default function LogInForm() {
           },
         });
       } else {
-        router.push("/home");
+        router.push("/protected/home");
       }
     } catch (error) {
       console.log("error", error);
@@ -67,11 +66,12 @@ export default function LogInForm() {
               },
             }}
             icon={<Lock />}></FormField>
-          <BaseButton
+          <Button
             type="submit"
             buttonSize="large"
             buttonStyle="primary"
-            text="Log In"></BaseButton>
+            text="Log In"
+          />
         </form>
       </FormProvider>
       <Link

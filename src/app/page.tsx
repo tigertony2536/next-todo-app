@@ -1,4 +1,10 @@
 import LogInForm from "./components/loginForm";
-export default function Home() {
-  return <LogInForm />;
+import { Task } from "@prisma/client";
+
+export default async function LogInPage() {
+  return (
+    <>
+      <LogInForm />
+    </>
+  );
 }

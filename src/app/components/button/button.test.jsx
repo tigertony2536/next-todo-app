@@ -1,11 +1,11 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 
-import { BaseButton } from "./button";
+import { Button } from "./button";
 
 describe("test Button component", () => {
   beforeEach(() => {
-    render(<BaseButton text="Test"></BaseButton>);
+    render(<Button text="Test"></Button>);
   });
 
   it("Canrender renders the button", () => {
