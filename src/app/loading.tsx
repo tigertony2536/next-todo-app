@@ -1,3 +1,11 @@
+import Lottie from "lottie-react";
+import * as loadingAnimation from "../lotties/loadingAnimation.json";
+
 export default function Loading() {
-  return <h1 className="text-primary font-bold">Loading...</h1>;
+	return (
+		<Lottie
+			animationData={loadingAnimation}
+			loop={true}
+		/>
+	);
 }

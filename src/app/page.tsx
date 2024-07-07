@@ -1,10 +1,9 @@
-import LogInForm from "./components/loginForm";
-import { Task } from "@prisma/client";
+import LoginForm from "@/components/Form/LoginForm";
 
 export default async function LogInPage() {
-  return (
-    <>
-      <LogInForm />
-    </>
-  );
+	return (
+		<>
+			<LoginForm />
+		</>
+	);
 }
